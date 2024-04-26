@@ -104,12 +104,11 @@
       Promise.all(promises).then(loadUnity).catch(console.error);
     })
 
-    window.getUserData = function () {
-      return window.Telegram.WebApp.initData;
-    };
-
-    window.triggerHaptic = function (event) {
-      window.TelegramWebviewProxy.postEvent('web_app_trigger_haptic_feedback', event);
+    window.triggerHapticFeedback = function (type) {
+      window.TelegramWebviewProxy.postEvent('web_app_trigger_haptic_feedback', {
+        type: 'impact',
+        impact_style: type // 'light' | 'medium' | 'heavy' | 'rigid' | 'soft'
+      });
     };
   </script>
 </body>
