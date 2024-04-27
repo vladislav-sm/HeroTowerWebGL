@@ -107,10 +107,10 @@
       Promise.all(promises).then(loadUnity).catch(console.error);
     })
 
-    window.triggerHapticFeedback = function (hapticType) {
+    window.triggerHapticFeedback = function (hapticStyle) {
       window.TelegramWebviewProxy.postEvent('web_app_trigger_haptic_feedback', {
         type: 'impact',
-        impact_style: hapticType // 'light' | 'medium' | 'heavy' | 'rigid' | 'soft'
+        impact_style: hapticStyle // 'light' | 'medium' | 'heavy' | 'rigid' | 'soft'
       });
     };
   </script>
