@@ -51,6 +51,10 @@ body {
     background: url('progress-bar-full-light.png') no-repeat center;
 }
 
+#progress-percent {
+    text-align: center;
+}
+
 #unity-warning {
     margin: 0 auto;
     display: none;

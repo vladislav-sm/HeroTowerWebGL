@@ -17,6 +17,7 @@
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
+    <div id="progress-percent">0%</div>
     <div id="unity-warning"> </div>
   </div>
   <script>
@@ -26,6 +27,7 @@
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
     var warningBanner = document.querySelector("#unity-warning");
     var logo = document.querySelector("#logo");
+    var progressPercent = document.querySelector("#progress-percent");
 
     function unityShowBanner(msg, type) {
       function updateBannerVisibility() {
@@ -68,6 +70,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
+          progressPercent.innerText = Math.floor(100 * progress) + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           logo.style.display = "none";
