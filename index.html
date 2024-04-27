@@ -108,10 +108,10 @@
     })
 
     window.triggerHapticFeedback = function (hapticStyle) {
-      window.TelegramWebviewProxy.postEvent('web_app_trigger_haptic_feedback', {
+      window.TelegramWebviewProxy.postEvent('web_app_trigger_haptic_feedback', JSON.stringify({
         type: 'impact',
-        impact_style: hapticStyle // 'light' | 'medium' | 'heavy' | 'rigid' | 'soft'
-      });
+        impact_style: hapticStyle
+      }));
     };
   </script>
 </body>
